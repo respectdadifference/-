@@ -45,3 +45,18 @@ footer {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
