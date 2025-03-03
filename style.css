@@ -93,3 +93,17 @@ main {
 .gallery-container img:hover {
     transform: scale(1.1);
 }
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px; /* 小さい画面では文字を小さく */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* ナビゲーションの文字サイズを小さく */
+    }
+
+    .gallery-container img {
+        width: 100px; /* 小さい画面では画像を小さく */
+    }
+}
