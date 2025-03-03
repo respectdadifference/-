@@ -8,36 +8,6 @@ body {
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.intro {
-    margin-top: 50px;
-}
-
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-    
-}
-header {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 20px;
     text-align: center;
@@ -64,4 +34,14 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #FFD700; /* ゴールドっぽい光沢 */
+}
+
+.intro {
+    margin-top: 50px;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
