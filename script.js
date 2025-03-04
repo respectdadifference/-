@@ -38,4 +38,16 @@ window.addEventListener("scroll", function() {
     lastScrollTop = scrollTop;
 });
 
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+    let header = document.querySelector("header");
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    if (scrollTop > lastScrollTop && scrollTop > 80) {
+        header.style.top = "-80px"; // 下にスクロールで隠す
+    } else {
+        header.style.top = "0"; // 上にスクロールで再表示
+    }
+
+    lastScrollTop = scrollTop;
+});
