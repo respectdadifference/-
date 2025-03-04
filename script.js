@@ -1,53 +1,40 @@
 document.addEventListener("DOMContentLoaded", function() {
+    let overlay = document.getElementById("transition-overlay");
+
+    // ページロード時にフェードイン
     document.body.style.opacity = "0";
     setTimeout(() => {
-        document.body.style.transition = "opacity 2s";
+        document.body.style.transition = "opacity 1s ease-in-out";
         document.body.style.opacity = "1";
-    }, 500);
-});
+    }, 300);
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.body.style.opacity = "0";
-    setTimeout(() => {
-        document.body.style.transition = "opacity 2s";
-        document.body.style.opacity = "1";
-    }, 500);
-
-    // ギャラリー画像のフェードイン
-    let images = document.querySelectorAll(".gallery-container img");
-    images.forEach((img, index) => {
-        img.style.opacity = "0";
-        setTimeout(() => {
-            img.style.transition = "opacity 1s ease-in-out";
-            img.style.opacity = "1";
-        }, 1000 + index * 500);
+    // ページ遷移時のエフェクト
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            let href = this.href;
+            
+            // 光のエフェクトを発動 & フェードアウト
+            overlay.style.opacity = "1";
+            setTimeout(() => {
+                document.body.style.opacity = "0";
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500); // フェードアウト後に遷移
+            }, 500); // 光のエフェクトの時間
+        });
     });
 });
 
-let lastScrollTop = 0;
-window.addEventListener("scroll", function() {
-    let header = document.querySelector("header");
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop) {
-        header.classList.add("hidden-header"); // 下にスクロールで隠す
-    } else {
-        header.classList.remove("hidden-header"); // 上にスクロールで表示
-    }
-    
-    lastScrollTop = scrollTop;
-});
-
-let lastScrollTop = 0;
-window.addEventListener("scroll", function() {
-    let header = document.querySelector("header");
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop && scrollTop > 80) {
-        header.style.top = "-80px"; // 下にスクロールで隠す
-    } else {
-        header.style.top = "0"; // 上にスクロールで再表示
-    }
-
-    lastScrollTop = scrollTop;
-});
+#transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(0,0,0,1) 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 9999;
+}
