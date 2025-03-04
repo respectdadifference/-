@@ -1,3 +1,4 @@
+/* === 全体の設定 === */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #111;
@@ -7,38 +8,40 @@ body {
     padding: 0;
 }
 
+/* === ヘッダー（ナビゲーション）設定 === */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.95); /* 視認性UP */
+    padding: 15px 0;
+}
+
+/* ナビゲーションのリスト */
 nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap; /* はみ出し防止 */
-    gap: 20px; /* 間隔を調整 */
+    gap: 20px; /* メニュー間の余白 */
     padding: 10px 0;
-    max-width: 90%; /* 横幅を広げすぎないように */
+    max-width: 90%;
     margin: 0 auto;
 }
 
-header {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
+/* ナビゲーションのリンク */
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0;
+    list-style: none;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
+    font-size: 16px; /* フォントサイズ */
     font-weight: bold;
-    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap; /* 折り返しを防ぐ */
+    padding: 8px 12px;
     transition: color 0.3s ease-in-out;
 }
 
@@ -46,41 +49,12 @@ nav ul li a:hover {
     color: #FFD700; /* ゴールドっぽい光沢 */
 }
 
-.intro {
-    margin-top: 50px;
-}
-
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    font-size: 20px;
-    letter-spacing: 1px;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-}
+/* メインコンテンツの余白（ヘッダーと被らないように） */
 main {
-    margin-top: 80px; /* ヘッダー分の余白を確保 */
+    margin-top: 100px;
 }
 
+/* === ギャラリー（展示作品）設定 === */
 .gallery {
     text-align: center;
     margin-top: 50px;
@@ -104,133 +78,32 @@ main {
     transform: scale(1.1);
 }
 
+/* === フッター設定 === */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* === スマホ対応（レスポンシブデザイン） === */
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size: 24px; /* 小さい画面では文字を小さく */
-    }
-
-    nav ul li a {
-        font-size: 16px; /* ナビゲーションの文字サイズを小さく */
-    }
-
-    .gallery-container img {
-        width: 100px; /* 小さい画面では画像を小さく */
-    }
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* 折り返しを許可 */
-    padding: 10px 0;
-    gap: 15px; /* 文字間のスペース */
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    font-size: 16px; /* スマホで適切なサイズに */
-    white-space: nowrap; /* 文字の折り返しを防ぐ */
-}
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    transition: top 0.3s;
-}
-
-.hidden-header {
-    top: -80px; /* ヘッダーを上に隠す */
-}
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 15px 0; /* ヘッダーの上下の余白を調整 */
-    height: 60px; /* 高さを固定 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 0;
-}
-
-nav ul li a {
-    font-size: 16px;
-    white-space: nowrap;
-    padding: 10px 15px;
-}
-
-main {
-    margin-top: 80px; /* ヘッダー分の余白を確保 */
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* メニューの間隔を広げる */
-    padding: 10px 0;
-}
-
-nav ul li {
-    margin: 0;
-    list-style: none;
-}
-
-nav ul li a {
-    font-size: 18px; /* フォントサイズを少し大きく */
-    font-weight: bold; /* 太字にして統一感を出す */
-    text-transform: uppercase; /* すべて大文字にする（好みに応じて） */
-    letter-spacing: 1px; /* 文字間隔を調整 */
-}
-
-header {
-    background-color: rgba(0, 0, 0, 0.95); /* ほぼ黒にして視認性UP */
-    padding: 15px 0;
-}
-
-@media screen and (max-width: 768px) {
+    /* ナビゲーションを縦並びに */
     nav ul {
         flex-direction: column;
-        gap: 15px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
-}
-
-nav ul li a {
-    font-size: 16px; /* 文字サイズを少し小さめに */
-    padding: 8px 12px; /* 余白を調整 */
-    white-space: nowrap; /* 折り返しを防ぐ */
-}
-
-@media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* スマホでは縦並びに */
         text-align: center;
     }
 
     nav ul li {
-        width: 100%; /* 横幅いっぱいに広げる */
+        width: 100%;
     }
 
     nav ul li a {
-        font-size: 14px; /* スマホでは少し小さく */
+        font-size: 14px;
+    }
+
+    /* メインコンテンツの余白調整 */
+    main {
+        margin-top: 120px;
     }
 }
-
 
