@@ -167,3 +167,37 @@ main {
     margin-top: 80px; /* ヘッダー分の余白を確保 */
 }
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* メニューの間隔を広げる */
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li a {
+    font-size: 18px; /* フォントサイズを少し大きく */
+    font-weight: bold; /* 太字にして統一感を出す */
+    text-transform: uppercase; /* すべて大文字にする（好みに応じて） */
+    letter-spacing: 1px; /* 文字間隔を調整 */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.95); /* ほぼ黒にして視認性UP */
+    padding: 15px 0;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
