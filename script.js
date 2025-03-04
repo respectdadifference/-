@@ -38,3 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
     transition: opacity 0.5s ease-in-out;
     z-index: 9999;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    let doorOverlay = document.getElementById("door-overlay");
+
+    // ページ読み込み時にドアを開ける
+    setTimeout(() => {
+        doorOverlay.classList.add("open-doors");
+        setTimeout(() => {
+            doorOverlay.style.display = "none"; // ドアを消す
+            document.body.style.opacity = "1"; // ページを表示
+        }, 1500);
+    }, 1000); // 1秒後にドアを開ける
+});
