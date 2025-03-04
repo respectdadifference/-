@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -8,35 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- 光のエフェクト用オーバーレイ -->
+    <div id="transition-overlay"></div>
+
+    <!-- ヘッダー（ナビゲーションバー） -->
     <header>
-        <h1>深夜の美術館</h1>
         <nav>
             <ul>
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#">展示作品</a></li>
-                <li><a href="#">購入ページ</a></li>
-                <li><a href="#">お問い合わせ</a></li>
+                <li><a href="index.html" class="active">ホーム</a></li>
+                <li><a href="gallery.html">展示作品</a></li>
+                <li><a href="shop.html">購入ページ</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- メインコンテンツ -->
     <main>
-        <section class="intro">
-            <h2>ようこそ、美術館へ</h2>
-            <p>深夜の美術館を探検し、アートの世界へ没入しましょう。</p>
+        <h1>深夜の美術館へようこそ</h1>
+        <p>深夜の美術館を探検し、アートの世界へ没入しましょう。</p>
+
+        <!-- 展示作品ギャラリー -->
+        <section class="gallery">
+            <h2>展示作品</h2>
+            <div class="gallery-container">
+                <img src="art1.jpg" alt="アート1">
+                <img src="art2.jpg" alt="アート2">
+                <img src="art3.jpg" alt="アート3">
+            </div>
         </section>
     </main>
+
+    <!-- フッター -->
     <footer>
         <p>© 2025 深夜の美術館</p>
     </footer>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
+
 </body>
 </html>
-
-<section class="gallery">
-    <h2>展示作品</h2>
-    <div class="gallery-container">
-        <img src="https://github.com/respectdadifference/-/blob/main/0197D6F8-59B2-45CE-B69A-2DAB9D9500FD.PNG" alt="アート1">
-        <img src="https://github.com/respectdadifference/-/blob/main/3566A487-DFFE-4056-ADA7-25BE3B961318.PNG" alt="アート2">
-        <img src="https://github.com/respectdadifference/-/blob/main/07314320-0744-4D79-86A4-6C63F6321012.PNG" alt="アート3">
-    </div>
-</section>
