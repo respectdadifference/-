@@ -24,3 +24,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+    let header = document.querySelector("header");
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+        header.classList.add("hidden-header"); // 下にスクロールで隠す
+    } else {
+        header.classList.remove("hidden-header"); // 上にスクロールで表示
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+
