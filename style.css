@@ -107,3 +107,34 @@ main {
         width: 100px; /* 小さい画面では画像を小さく */
     }
 }
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 折り返しを許可 */
+    padding: 10px 0;
+    gap: 15px; /* 文字間のスペース */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    font-size: 16px; /* スマホで適切なサイズに */
+    white-space: nowrap; /* 文字の折り返しを防ぐ */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.hidden-header {
+    top: -80px; /* ヘッダーを上に隠す */
+}
+
+
