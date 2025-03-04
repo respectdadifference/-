@@ -78,6 +78,11 @@ main {
     transform: scale(1.1);
 }
 
+/* メインコンテンツの余白を増やして、ヘッダーと被らないように */
+main {
+    margin-top: 120px; /* ヘッダーの高さより少し大きめに設定 */
+}
+
 /* === フッター設定 === */
 footer {
     margin-top: 50px;
