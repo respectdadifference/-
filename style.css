@@ -155,3 +155,52 @@ body {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
 }
+
+/* === 美術館のドアアニメーション === */
+#door-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.door {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #222, #000);
+    position: absolute;
+    top: 0;
+    transition: transform 1.5s ease-in-out;
+}
+
+.left-door {
+    left: 0;
+    transform: translateX(0);
+}
+
+.right-door {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* ドアが開くアニメーション */
+.open-doors .left-door {
+    transform: translateX(-100%);
+}
+
+.open-doors .right-door {
+    transform: translateX(100%);
+}
+
+/* ドアが開いた後にページを表示 */
+body {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
