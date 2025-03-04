@@ -7,6 +7,16 @@ body {
     padding: 0;
 }
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* はみ出し防止 */
+    gap: 20px; /* 間隔を調整 */
+    padding: 10px 0;
+    max-width: 90%; /* 横幅を広げすぎないように */
+    margin: 0 auto;
+}
+
 header {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 20px;
