@@ -137,4 +137,33 @@ header {
     top: -80px; /* ヘッダーを上に隠す */
 }
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 15px 0; /* ヘッダーの上下の余白を調整 */
+    height: 60px; /* 高さを固定 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+}
+
+nav ul li a {
+    font-size: 16px;
+    white-space: nowrap;
+    padding: 10px 15px;
+}
+
+main {
+    margin-top: 80px; /* ヘッダー分の余白を確保 */
+}
 
